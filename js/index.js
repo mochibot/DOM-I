@@ -12,7 +12,7 @@ const siteContent = {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png",
-    "new-h1": "Having fun with DOM"
+    "new-h1": "I'm lovin' DOM"
   },
   "main-content": {
     "features-h4":"Features",
@@ -45,7 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let headerImg = document.getElementById('cta-img');
 headerImg.setAttribute('src', siteContent['cta']['img-src']);
 
-let navLinks = document.querySelectorAll('nav a');
+navLinks = document.querySelectorAll('nav a');
 navLinks[0].textContent = siteContent['nav']['nav-item-1'];
 navLinks[1].textContent = siteContent['nav']['nav-item-2'];
 navLinks[2].textContent = siteContent['nav']['nav-item-3'];
@@ -59,11 +59,13 @@ navLinks.forEach(item => item.style.color = 'green');
 //adding a new navigation link to end of nav list
 let newNavLink1 = document.createElement('a');
 newNavLink1.textContent = 'Sign Up';
+newNavLink1.style.color = 'red';
 document.querySelector('header nav').appendChild(newNavLink1);
 
 //adding a new navigation link to beginning of nav list
 let newNavLink2 = document.createElement('a');
 newNavLink2.textContent = 'News';
+newNavLink2.style.color = 'red';
 document.querySelector('header nav').prepend(newNavLink2);
 
 let title = document.querySelector('.cta .cta-text h1');
