@@ -11,7 +11,8 @@ const siteContent = {
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
-    "img-src": "img/header-img.png"
+    "img-src": "img/header-img.png",
+    "new-h1": "Having fun with DOM"
   },
   "main-content": {
     "features-h4":"Features",
@@ -65,12 +66,23 @@ let newNavLink2 = document.createElement('a');
 newNavLink2.textContent = 'News';
 document.querySelector('header nav').prepend(newNavLink2);
 
-
 let title = document.querySelector('.cta .cta-text h1');
 title.textContent = siteContent['cta']['h1'];
 
 let button = document.querySelector('.cta .cta-text button');
 button.textContent = siteContent['cta']['button'];
+
+//Add event listener to button to alternate h1 text
+function altTitle() {
+  if (title.textContent === siteContent['cta']['h1']) {
+    title.textContent = siteContent['cta']['new-h1'];
+  } else {
+    title.textContent = siteContent['cta']['h1'];
+  }
+}
+
+button.addEventListener('click', altTitle, false);
+
 
 let topLeftColTitle = document.querySelector('.top-content :nth-child(1) h4');
 topLeftColTitle.textContent = siteContent['main-content']['features-h4'];
@@ -115,3 +127,7 @@ contactText[2].textContent = siteContent['contact']['email'];
 
 let footerText = document.querySelector('footer p');
 footerText.textContent = siteContent['footer']['copyright'];
+
+//Increasing the font size of the section title
+let h4Element = document.querySelectorAll('h4');
+h4Element.forEach(item => item.style.fontSize = '1.6rem');
