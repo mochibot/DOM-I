@@ -52,6 +52,20 @@ navLinks[3].textContent = siteContent['nav']['nav-item-4'];
 navLinks[4].textContent = siteContent['nav']['nav-item-5'];
 navLinks[5].textContent = siteContent['nav']['nav-item-6'];
 
+//changing color of navigation text to green
+navLinks.forEach(item => item.style.color = 'green');
+
+//adding a new navigation link to end of nav list
+let newNavLink1 = document.createElement('a');
+newNavLink1.textContent = 'Sign Up';
+document.querySelector('header nav').appendChild(newNavLink1);
+
+//adding a new navigation link to beginning of nav list
+let newNavLink2 = document.createElement('a');
+newNavLink2.textContent = 'News';
+document.querySelector('header nav').prepend(newNavLink2);
+
+
 let title = document.querySelector('.cta .cta-text h1');
 title.textContent = siteContent['cta']['h1'];
 
