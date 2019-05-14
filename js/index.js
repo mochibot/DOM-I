@@ -46,12 +46,7 @@ let headerImg = document.getElementById('cta-img');
 headerImg.setAttribute('src', siteContent['cta']['img-src']);
 
 navLinks = document.querySelectorAll('nav a');
-navLinks[0].textContent = siteContent['nav']['nav-item-1'];
-navLinks[1].textContent = siteContent['nav']['nav-item-2'];
-navLinks[2].textContent = siteContent['nav']['nav-item-3'];
-navLinks[3].textContent = siteContent['nav']['nav-item-4'];
-navLinks[4].textContent = siteContent['nav']['nav-item-5'];
-navLinks[5].textContent = siteContent['nav']['nav-item-6'];
+navLinks.forEach((item, index) => item.textContent = siteContent['nav'][`nav-item-${index + 1}`]);
 
 //changing color of navigation text to green
 navLinks.forEach(item => item.style.color = 'green');
@@ -82,10 +77,9 @@ function altTitle() {
     title.textContent = siteContent['cta']['h1'];
   }
 }
-
 button.addEventListener('click', altTitle, false);
 
-
+//main-content section
 let topLeftColTitle = document.querySelector('.top-content :nth-child(1) h4');
 topLeftColTitle.textContent = siteContent['main-content']['features-h4'];
 
